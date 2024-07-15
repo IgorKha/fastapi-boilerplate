@@ -1,0 +1,11 @@
+---
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nginx
+    network_mode: host
+    volumes:
+      - ../../vue/dist:/usr/share/nginx/html:ro
+      - ./stuff/nginx.conf:/etc/nginx/nginx.conf:ro

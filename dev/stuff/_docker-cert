@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+check_openssl_installed() {
+    if ! command -v openssl &> /dev/null; then
+        echo "Error: openssl is not installed." >&2 | logger -t api-cert
+        exit 1
+    fi
+}
+
+check_certificate_exists() {
+    local cert_file="$1"
+    if [ -f "$cert_file" ]; then
+        echo "fastapi-cert certificates already exist." | logger -t api-cert
+        exit 0
+    fi
+}
+
+create_certificate() {
+    local cert_file="$1"
+    local key_file="$2"
+    openssl req -x509 -newkey rsa:4096 -nodes -out "$cert_file" -keyout "$key_file" -days 3650 -subj "/C=RU/O=fastapi"
+    echo "fastapi-cert certificates have been created." | logger -t api-cert
+}
+
+set_permissions() {
+    local cert_file="$1"
+    local key_file="$2"
+    chmod 644 "$cert_file"
+    chmod 600 "$key_file"
+    echo "fastapi-cert set permissions mode" | logger -t api-cert
+}
+
+main() {
+    local cert_file="/etc/nginx/cert.pem"
+    local key_file="/etc/nginx/key.pem"
+
+    check_openssl_installed
+    check_certificate_exists "$cert_file"
+    create_certificate "$cert_file" "$key_file"
+    set_permissions "$cert_file" "$key_file"
+}
+
+main

@@ -1,0 +1,11 @@
+[Unit]
+Description=Generate SSL certificate for fastapi-web
+Before=nginx.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/api-cert
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

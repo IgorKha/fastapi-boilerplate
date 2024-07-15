@@ -1,0 +1,59 @@
+[tool.poetry]
+name = "fastapi-slim"
+version = "0.1.0"
+description = ""
+authors = [
+    "Igor Kha"
+]
+maintainers = [
+    "Igor Kha"
+]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/IgorKha/fastapi-boilerplate"
+keywords = ["fastapi", "api", "jwt"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+annotated-types = "0.7.0"
+anyio = "4.4.0"
+bcrypt = "4.0.1"
+click = "8.1.7"
+fastapi-slim = "0.111.0"
+h11 = "0.14.0"
+idna = "3.7"
+passlib = "1.7.4"
+pydantic = "2.8.2"
+pydantic-core = "2.20.1"
+pyjwt = "2.8.0"
+python-multipart = "0.0.9"
+sniffio = "1.3.1"
+starlette = "0.37.2"
+typing-extensions = "4.12.2"
+uvicorn = "0.30.1"
+psutil = "^6.0.0"
+pydantic-settings = "^2.3.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+cache-dir = "build/.ruff_cache"
+output-format = "full"
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "D212"
+    , "D205"
+    , "D400"
+    , "D415"
+    , "ANN101"
+    , "COM812"
+    , "FIX002"
+    , "TD003"
+    , "B008"
+    ]

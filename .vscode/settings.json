@@ -1,0 +1,102 @@
+{
+  "docker.environment": {
+    "COMPOSE_PROJECT_NAME": "fastapi-boilerplate-api"
+  },
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  // "[python]": {
+  //   "editor.defaultFormatter": "ms-python.autopep8",
+  //   "editor.formatOnSave": true
+  // },
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.inlayHints.pytestParameters": true,
+  "commentTranslate.targetLanguage": "ru",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.shellcheck": "explicit"
+  },
+  "editor.renderWhitespace": "boundary",
+  "editor.defaultFormatter": "timonwong.shellcheck",
+  "cSpell.enableFiletypes": [
+    "shellscript"
+  ],
+  "editor.rulers": [
+    88
+  ],
+  "editor.wordWrap": "bounded",
+  "editor.wordWrapColumn": 88,
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "editor.trimAutoWhitespace": true,
+  "files.encoding": "utf8",
+  "files.eol": "auto",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "todo-tree.general.tagGroups": {
+    "BUG": [
+      "BUG",
+      "ERROR",
+      "ERR",
+      "ISSUE",
+      "PROBLEM"
+    ],
+    "HACK": [
+      "HACK",
+      "HACKY",
+      "HACKED",
+      "HACKING",
+      "HACKS"
+    ],
+    "FIX": [
+      "FIXME",
+      "FIXIT",
+      "FIX IT",
+      "FIX"
+    ],
+    "TODO": [
+      "TODO",
+      "TO DO",
+      "TO-DO",
+      "TASK",
+      "TASKS",
+      "DO IT",
+      "DOIT"
+    ],
+    "IDEA": [
+      "IDEA",
+      "IDEAS"
+    ]
+  },
+  "todo-tree.filtering.excludeGlobs": [
+    "**/.vscode/**",
+    "**/.git/**",
+    "**/.venv/**",
+    ".gitignore"
+  ],
+  "todo-tree.tree.hideTreeWhenEmpty": true,
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "[yaml]": {
+    "editor.tabSize": 2
+  },
+  "cSpell.words": [
+    "keyout",
+    "newkey",
+    "pydantic",
+    "redoc",
+    "REDOCS",
+    "starlette"
+  ],
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+}

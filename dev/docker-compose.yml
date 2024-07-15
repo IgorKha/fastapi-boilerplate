@@ -1,0 +1,10 @@
+---
+services:
+  web:
+    image: nginx:stable-alpine-slim
+    network_mode: host
+    volumes:
+      - ../../vue/dist:/usr/share/nginx/html:ro
+      - ./stuff/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./stuff/cert.pem:/etc/nginx/cert.pem:ro
+      - ./stuff/key.pem:/etc/nginx/key.pem:ro
